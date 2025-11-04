@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>1S33Y0U</title>
+</head>
+<body>
+  <style>
+    html, body {
+      margin: 0;     /* elimina el margen por defecto */
+      padding: 0;    /* elimina el relleno por defecto */
+      background-color: black; /* fondo negro */
+      height: 100%;  /* asegura que cubra toda la pantalla */
+    }
+  </style>
+  <audio id="bg-music" src="Raldi_ambiebt№2.mp3" autoplay loop></audio>
+
+  <script>
+    const audio = document.getElementById("bg-music");
+
+    // Intentar reproducir automáticamente
+    audio.play().catch(() => {
+      console.log("⚠️ Autoplay blocked. Waiting for user interaction...");
+      document.body.addEventListener("click", () => {
+        audio.play();
+        console.log("✅ Music started after user interaction");
+      }, { once: true });
+    });
+  </script>
+  <img src="ISEEYOUNIGA.png" height="2000">
+</body>
+</html>

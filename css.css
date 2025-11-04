@@ -1,0 +1,28 @@
+@font-face {
+    font-family: RandomFont;
+    src: url(Ldfcomicsansbold-zgma.ttf);
+}
+h1{
+    font-family: RandomFont;
+    font-weight: bold;
+}
+h2{
+    font-family: RandomFont;
+    font-weight: bold;
+}
+h3{
+    font-family: RandomFont;
+    font-weight: bold;
+}
+h4{
+    font-family: RandomFont;
+    font-weight: bold;
+}
+h5{
+    font-family: RandomFont;
+    font-weight: bold;
+}
+p{
+    font-family: RandomFont;
+    font-weight: bold;
+}
