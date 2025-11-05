@@ -75,9 +75,25 @@ This is a first-person game inspired by the popular '96 game Baldi's Basics, thi
 <audio controls>
 <source src="story mode jingle (1).mp3" type="audio/mpeg"/>
 </audio>
-
 <hr>
-<a href="1s33y0u.html" class="redirection button"> hi.</a>
+<img id="ucGif" src="Under_construction_graphic.gif" alt="Under Construction" width="500">
+<script>
+const gif = document.getElementById('ucGif');
+gif.style.cursor = 'pointer';
+gif.addEventListener('click', () => {
+alert('UNDER CONSTRUCTION!');
+});
+</script>
+<hr>
+<body>
+  <img id="miImagen" src="images.jpeg" alt="see you">
 
+  <script>
+    const imagen = document.getElementById('miImagen');
+    imagen.addEventListener('click', () => {
+      // redirige a otra página local del mismo proyecto
+      window.location.href = '1s33y0u.html'; 
+    });
+  </script>
 </body>
 </html>
