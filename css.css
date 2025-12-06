@@ -26,3 +26,118 @@ p{
     font-family: RandomFont;
     font-weight: bold;
 }
+/* ======== BLOGGER CLÁSICO 2005–2007 ======== */
+
+/* Fondo estilo plantilla antigua */
+body {
+  background: #f2e9d8 url("https://frutigeraeroarchive.org/images/wallpapers/dell/dell_12.jpg");
+  background-size: 400px;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cabecera al estilo blogger */
+h1:first-of-type {
+  background: #f6a44c;
+  color: #fff;
+  padding: 25px;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  border-bottom: 4px solid #ce7425;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px #c86d22;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+/* Contenido centrado estilo columna antigua */
+body > *:not(h1):not(script) {
+  max-width: 800px;
+  margin: 20px auto;
+  display: block;
+}
+
+/* Títulos */
+h2, h3, h4 {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  color: #ce6e17;
+  border-left: 6px solid #f6a44c;
+  padding-left: 10px;
+  margin-top: 40px;
+}
+
+/* Párrafos estilo blogspot */
+p {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 4px;
+  border: 1px solid #d4c7b8;
+  line-height: 1.6;
+  font-size: 16px;
+  box-shadow: 0 0 4px #d6cfc5;
+}
+
+/* Imágenes con borde típico blogger */
+img {
+  border: 5px solid #fff;
+  outline: 1px solid #c7b9a8;
+  box-shadow: 0 0 8px #b8afa1;
+  border-radius: 2px;
+  margin: 12px;
+}
+
+/* Enlaces clásicos blogger */
+a {
+  color: #245c9c;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover {
+  color: #de6d00;
+  text-decoration: underline;
+}
+
+/* Audio estilo bloque */
+audio {
+  width: 90%;
+  border: 1px solid #c8b9a4;
+  padding: 5px;
+  background: #f8f5ef;
+  box-shadow: 0 0 4px #cfc6b7 inset;
+  border-radius: 3px;
+}
+
+/* Separadores estilo blog */
+hr {
+  border: 0;
+  height: 2px;
+  background: #e2d6c4;
+  margin: 40px auto;
+  max-width: 750px;
+}
+
+/* GIF under construction sin borde grueso */
+#ucGif {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Imagen final que redirige */
+#miImagen {
+  cursor: pointer;
+}
+
+/* Sidebar simulada (como los gadgets de blogger) */
+.sidebar-box {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #d4c7b8;
+  font-family: Verdana;
+  width: 250px;
+  margin: 20px auto;
+  box-shadow: 0 0 6px #d8cfc1;
+}
