@@ -1,91 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>disappeared</title>
+    <title>1S33Y0U</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .glitch {
+            position: relative;
+            height: 400px;
+            cursor: pointer;
+        }
+
+        .glitch img {
+            display: block;
+            height: 100%;
+        }
+
+        /* Capas glitch (como antes) */
+        .glitch::before,
+        .glitch::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("Ian.png");
+            background-size: cover;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .glitch::before {
+            animation: glitch1 1.5s infinite;
+            filter: hue-rotate(10deg);
+        }
+
+        .glitch::after {
+            animation: glitch2 1.5s infinite;
+            filter: hue-rotate(-10deg);
+        }
+
+        @keyframes glitch1 {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 1px); }
+            40% { transform: translate(1px, -1px); }
+            60% { transform: translate(-1px, 0); }
+            80% { transform: translate(1px, 1px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes glitch2 {
+            0% { transform: translate(0); }
+            20% { transform: translate(2px, -1px); }
+            40% { transform: translate(-1px, 1px); }
+            60% { transform: translate(1px, 0); }
+            80% { transform: translate(-1px, -1px); }
+            100% { transform: translate(0); }
+        }
+    </style>
 </head>
+
 <body>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background-color: black;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
 
-    .glitch {
-      position: relative;
-      height: 400px;
-    }
+<!-- AUDIO -->
+<audio id="bg-music" src="ianmusic.mp3" loop></audio>
 
-    .glitch img {
-      display: block;
-      height: 100%;
-    }
-
-    .glitch::before,
-    .glitch::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url("Ian.png");
-      background-size: cover;
-      opacity: 0.3;
-      pointer-events: none;
-    }
-
-    .glitch::before {
-      animation: glitch1 1.5s infinite;
-      filter: hue-rotate(10deg);
-    }
-
-    .glitch::after {
-      animation: glitch2 1.5s infinite;
-      filter: hue-rotate(-10deg);
-    }
-
-    @keyframes glitch1 {
-      0% { transform: translate(0); }
-      20% { transform: translate(-2px, 1px); }
-      40% { transform: translate(1px, -1px); }
-      60% { transform: translate(-1px, 0); }
-      80% { transform: translate(1px, 1px); }
-      100% { transform: translate(0); }
-    }
-
-    @keyframes glitch2 {
-      0% { transform: translate(0); }
-      20% { transform: translate(2px, -1px); }
-      40% { transform: translate(-1px, 1px); }
-      60% { transform: translate(1px, 0); }
-      80% { transform: translate(-1px, -1px); }
-      100% { transform: translate(0); }
-    }
-  </style>
-
-  <audio id="bg-music" src="Raldi_ambiebt№2.mp3" autoplay loop></audio>
-
-  <script>
-    const audio = document.getElementById("bg-music");
-
-    audio.play().catch(() => {
-      console.log("⚠️ Autoplay blocked. Waiting for user interaction...");
-      document.body.addEventListener("click", () => {
-        audio.play();
-        console.log("✅ Music started after user interaction");
-      }, { once: true });
-    });
-  </script>
-
-  <div class="glitch">
+<div class="glitch" id="glitch">
     <img src="Ian.png">
-  </div>
+</div>
+
+<script>
+const audio = document.getElementById("bg-music");
+const glitch = document.getElementById("glitch");
+
+let started = false;
+
+// 🔊 Activar música con primer click (OBLIGATORIO por navegador)
+document.addEventListener("click", () => {
+    if (!started) {
+        audio.volume = 0.7;
+        audio.play().catch(() => {});
+        started = true;
+    }
+});
+
+// 👁️ Click en imagen → redirección
+glitch.addEventListener("click", () => {
+    window.location.href = "FOREST1.html";
+});
+</script>
 
 </body>
 </html>
