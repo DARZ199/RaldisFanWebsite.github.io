@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>forest5</title>
+
+<style>
+body{
+  margin:0;
+  background:black;
+  overflow:hidden;
+}
+
+
+.container{
+  position:relative;
+  width:100%;
+  height:100vh;
+}
+
+
+.base{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+
+.pulse{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  mask-image: radial-gradient(circle at center, white 0%, transparent 60%);
+  -webkit-mask-image: radial-gradient(circle at center, white 0%, transparent 60%);
+
+  animation: breathe 8s infinite ease-in-out;
+}
+
+@keyframes breathe{
+  0%   {transform: scale(1);}
+  50%  {transform: scale(1.008);}
+  100% {transform: scale(1);}
+}
+
+
+.dark{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.2);
+  animation: fade 12s infinite alternate ease-in-out;
+}
+
+@keyframes fade{
+  from {background:rgba(0,0,0,0.1);}
+  to   {background:rgba(0,0,0,0.4);}
+}
+
+
+.glitch{
+  position:absolute;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255,255,255,0.02) 3px
+  );
+  animation: glitchMove 3s infinite;
+}
+
+@keyframes glitchMove{
+  0% {transform: translateY(0);}
+  50% {transform: translateY(1px);}
+  100% {transform: translateY(0);}
+}
+
+.text-img{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  width:300px;
+  opacity:0; 
+
+  transition: opacity 5s ease; 
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <img src="Forest_Minigame_20260321190033.png" class="base">
+  <img src="Forest_Minigame_20260321190033.png" class="pulse">
+
+  <div class="dark"></div>
+  <div class="glitch"></div>
+
+ 
+  <img src="Forest_Minigame_20260321190045.png" class="text-img" id="text">
+
+</div>
+
+
+<audio id="ambient" src="FOREST5.mp3" loop></audio>
+<audio id="scream" src="ianscream.mp3"></audio>
+
+<script>
+const ambient = document.getElementById("ambient");
+const text = document.getElementById("text");
+
+
+document.addEventListener("click", () => {
+  ambient.volume = 0.4;
+  ambient.play().catch(()=>{});
+}, { once: true });
+
+
+setInterval(()=>{
+  ambient.volume = 0.35 + Math.random()*0.1;
+}, 2000);
+
+
+
+</script>
+
+</body>
+</html>
